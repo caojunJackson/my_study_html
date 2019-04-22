@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            float: right;
+        }
+
+        div {
+            border: solid green 1px;
+        }
+
+        .clearfix {
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 如果 img在 div下面,就没有异常的浮动效果, 浮动效果应该是在同一行下的浮动, 浮动不会挡住布局的文字 -->
+    <img src="https://zh.learnlayout.com/images/ilta.png" alt="">
+    <div class="clearfix"> 不......这个图片比包含它的元素还高， 而且它是浮动的，于是它就溢出到了容器外面！</div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script>
+                    function allowDrop(ev) {
+                        ev.preventDefault();
+                    }
+                    
+                    function drag(ev) {
+                        ev.dataTransfer.setData("text", ev.target.id);
+                    }
+                    
+                    function drop(ev) {
+                        ev.preventDefault();
+                        var data = ev.dataTransfer.getData("text");
+                        ev.target.appendChild(document.getElementById(data));
+                    }
+                    </script>
+    </head>
+
+<body>
+
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+        <img id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="336" height="69">
+
+
+
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;">
+        Your browser does not support the canvas element.
+    </canvas>
+
+
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+        <polygon points="100,10 40,180 190,60 10,60 160,180"
+        style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+      </svg>
+    <script type="text/javascript">
+        var c = document.getElementById("myCanvas");
+        var cxt = c.getContext("2d");
+        cxt.moveTo(10,10);
+        cxt.lineTo(150,50);
+        cxt.lineTo(10,50);
+        cxt.stroke();
+
+      
+
+    </script>
+</body>
+
+</html>
