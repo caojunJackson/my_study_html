@@ -11,6 +11,7 @@
 
 <body>
 
+
     <p id="p1">
         JavaScript 能够直接写入 HTML 输出流中：
     </p>
@@ -20,7 +21,13 @@
         您只能在 HTML 输出流中使用 <strong>document.write</strong>。
         如果您在文档已加载后使用它（比如在函数中），会覆盖整个文档。
     </p>
-
+    <script>
+        function myFunction() {
+            carName = "volvo";
+        }
+        myFunction();
+        document.getElementById("p1").innerHTML = "如果你的变量没有声明，它将自动成为全局变量：" + carName;
+    </script>
 </body>
 
 </html>

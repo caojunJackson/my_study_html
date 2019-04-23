@@ -40,67 +40,106 @@
 // log(car);
 
 
-var carname = new String();
-var x = new Number;
-var y = new Boolean;
-var cars = new Array();
-var person = new Object;
+// var x = ["1", "3", "2"];
+// for (var y in x) {
+//     log(x[y]);
+// }
 
-log(carname+": carname");
-log(x);
-log(y);
-log("cars:"+cars);
-log(person.name);
+// var str = "Visit Runoob!";
+// var n = str.search("Runoob");
+// log(n)
 
 
-function Demo(){
-    this.name="张思";
-    this.age=12;
-    this.firstF=function(){
-    }
-    this.secondF=function(){
-        return "secondF method";
-    }
-}
-
-var one=new Demo();
-log(one.secondF());
-// 调用输出
-log(one.age);
+// log(typeof "Jonh");
+// log(typeof 12.252);
+// log(typeof ["Jonh"]);
+// log(typeof {name:"Jonh"});
 
 
-var person = new Object();
-person.name = "Alex";
-person.age = null;
-person.method = function(){
-    return this.name + this.age;
-} 
 
-log(person.method());
+// var carname = new String();
+// var x = new Number;
+// var y = new Boolean;
+// var cars = new Array();
+// var person = new Object;
+
+// log(carname + ": carname");
+// log(x);
+// log(y);
+// log("cars:" + cars);
+// log(person.name);
+
+
+// function Demo() {
+//     this.name = "张思";
+//     this.age = 12;
+//     this.firstF = function () {
+//     }
+//     this.secondF = function () {
+//         return "secondF method";
+//     }
+// }
+
+// var one = new Demo();
+// log(one.secondF());
+// // 调用输出
+// log(one.age);
+
+
+// log(getPerson().method);
 
 
 //如果您把值赋给尚未声明的变量，该变量将被自动作为 window 的一个属性。
 
-var var1 = 1;// 不可配置全局属性
-var2 = 2;// 没有使用 var 声明，可配置全局属性
-log(this.var1);
-log(window.var2)
+// var var1 = 1;// 不可配置全局属性
+// var2 = 2;// 没有使用 var 声明，可配置全局属性
+// log(this.var1);
+// log(window.var2)
 
-log(delete var1); // false 无法删除
-log(var1);
+// log(delete var1); // false 无法删除
+// log(var1);
 
-log(delete var2); // true
-log(var2); 
+// log(delete var2); // true
+// log(var2);
+
+
+var text = '{ "sites" : [' +
+'{ "name":"Runoob" , "url":"www.runoob.com" },' +
+'{ "name":"Google" , "url":"www.google.com" },' +
+'{ "name":"Taobao" , "url":"www.taobao.com" } ]}';
+let obj = JSON.parse(text);
+log(JSON.stringify(obj));
 
 
 /////////////////////////////////////////////////////
 
-function log(s){
-    document.write(s+"<br>");
+function isData(myData){
+    return myData.constructor.toString().indexOf("Date") > -1;
 }
 
+function isArray(myArray){
+    return myArray.constructor.toString.indexOf("Array") > -1;
+}
 
-function myFunc(ele){
+function log(s) {
+    document.write(s + "<br>");
+}
+
+function getCars() {
+    return ["BMW", "Volvo", "Saab", "Ford"];
+}
+
+function getPerson() {
+    var person = new Object();
+    person.name = "Alex";
+    person.age = null;
+    person.method = function () {
+        return this.name + this.age;
+    }
+    return person;
+}
+
+function myFunc(ele) {
     ele.innerHTML = "Hello P1";
     ele.style.color = "#FF00FF"
     // document.write("hello")
@@ -111,22 +150,22 @@ function myFunc(ele){
     p1.innerHTML = 123e4;
 
 
-    var arrs = [40,100,65,98,12];
+    var arrs = [40, 100, 65, 98, 12];
     var objs = {
-        name : "Alex",
-        age : "18",
-        eyeColor : "black"
+        name: "Alex",
+        age: "18",
+        eyeColor: "black"
     }
 
-    var test = 16+"volvo";
-    var test1 ;
+    var test = 16 + "volvo";
+    var test1;
     console.log(test1);
 
-  
+
 }
 
-function init(){
-  //基本: String Number Boolean Null Undefined Symbol
+function init() {
+    //基本: String Number Boolean Null Undefined Symbol
     //引用: Object Array Function
     //javaScript 拥有动态类型
 
@@ -136,6 +175,6 @@ function init(){
 }
 
 
-function add(a1, a2){
-    return a1+a2;
+function add(a1, a2) {
+    return a1 + a2;
 }
